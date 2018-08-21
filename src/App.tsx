@@ -23,6 +23,7 @@ class App extends React.Component<IProps, any> {
     return (
       <div className="App" >
         <h1> Hello : {this.viewModel.credit.first_name}</h1>
+        <h1> Hello : {this.viewModel.credit.last_name}</h1>
       </div>
     );
   }
