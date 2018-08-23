@@ -3,6 +3,10 @@ import { observer } from 'mobx-react';
 import { start } from './config/firebaseConfig';
 import { CreditStore } from './stores/CreditStore';
 
+import { HomePage } from './pressentations/pages/HomePage'
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 export interface IProps {
   name?: string;
 }
@@ -11,19 +15,21 @@ export interface IProps {
 class App extends React.Component<IProps, any> {
 
 
-  private viewModel : CreditStore;
+  private viewModel: CreditStore;
 
   constructor(props: IProps) {
     super(props);
     start();
     this.viewModel = new CreditStore();
+    console.log(this.viewModel);
   }
 
-  public render() {
+  render() {
     return (
       <div className="App" >
-        <h1> Hello : {this.viewModel.credit.first_name}</h1>
-        <h1> Hello : {this.viewModel.credit.last_name}</h1>
+        {/* <h1> Hello : {this.viewModel.credit.first_name}</h1>
+        <h1> Hello : {this.viewModel.credit.last_name}</h1> */}
+        <HomePage />
       </div>
     );
   }
