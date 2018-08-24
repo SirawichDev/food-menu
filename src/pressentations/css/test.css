@@ -1,5 +1,4 @@
 .test-1 {
-   background-color: salmon;
    /* height:100vh; */
    /* display: flex; */
    -webkit-flex: 1; /* Safari 6.1+ */
@@ -7,4 +6,53 @@
     flex: 1;
    /* text-align: center; */
    align-items: center;
+}
+
+.contrainer {
+   max-width: 1337px;
+   padding-top: 100px;
+   padding-bottom: 50px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.slideContainer {
+   background-color: lightcoral;
+   width: 600px;
+   height: 400px;
+   display: flex;
+}
+
+.slideContainer .image{
+   display: flex;
+   background-color: #FF69B4;
+   flex: 1;
+}
+
+.paginate-image {
+   display: flex;
+   flex-direction: row;
+}
+
+.paginate-contrainer {
+   display: flex;
+   flex-direction: row;
+   padding-top: 20px;
+}
+
+.paginate-item {
+   width: 20px;
+   height: 20px;
+   border-radius: 100%;
+   margin: 0px 10px 0px 10px;
+   border-style: solid;
+   border-width: 1px;
+   border-color: #FF69B4;
+}
+
+.paginate-item:hover {
+   cursor: pointer;
+   width: 25px;
+   height: 25px;
 }
