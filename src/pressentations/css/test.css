@@ -26,8 +26,8 @@
 
 .slideContainer .image{
    display: flex;
-   background-color: #FF69B4;
    flex: 1;
+   background-repeat: round;
 }
 
 .paginate-image {
@@ -55,4 +55,18 @@
    cursor: pointer;
    width: 25px;
    height: 25px;
+}
+
+.button-arrow {
+   display: flex;
+   align-items: center;
+}
+
+.button-arrow:hover {
+   cursor: pointer;
+}
+
+.button-center {
+   display: flex;
+   flex: 1;
 }
