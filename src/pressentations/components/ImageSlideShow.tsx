@@ -48,7 +48,7 @@ export class ImageSlideShow extends React.Component<IProps, any> {
          }
 
          return (
-            <div className="contrainer">
+            <div className="contrainer-slide">
                <div className="slideContainerImage">
                   <div className="slideContainer">
                      <div
@@ -92,7 +92,7 @@ export class ImageSlideShow extends React.Component<IProps, any> {
    private async onWorking() {
       this.timer = setInterval(() => {
          this.onArrowRight();
-      }, 5000);
+      },  2500);
    }
 
    private onArrowLeft = () => {

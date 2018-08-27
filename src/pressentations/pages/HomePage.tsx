@@ -3,6 +3,7 @@ import { FoodNavbar } from '../components/Navbar';
 import { observer } from 'mobx-react';
 import { ImageSlideShow } from '../components/ImageSlideShow';
 import { HomePageStore } from '../../stores/HomePageStore';
+// import { NavLink } from 'react-router-dom';
 
 // import * as RStrap from 'reactstrap';
 
@@ -25,11 +26,11 @@ export class HomePage extends React.Component<IProps, any> {
       render() {
 
             return (
-                  <div className='test-1' >
+                  <div>
                         <FoodNavbar />
-                        <ImageSlideShow imageSildeShow={this.viewModel.images} loading={this.viewModel.loading}/>
+                        <ImageSlideShow imageSildeShow={this.viewModel.images} loading={this.viewModel.loading} />
                         <div className="enter-site-contrainer">
-                              <a>
+                              <a href='/menu-foods' style={{textDecoration: 'none', color: 'black'}}>
                                     <div>
                                           เข้าสู่เว็บไซต์ | Enter Site
                                     </div>

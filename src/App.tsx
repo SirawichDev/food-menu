@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
 import { start } from './config/firebaseConfig';
-// import { CreditStore } from './stores/CreditStore';
+import  * as RXRouter from 'react-router-dom';
 import { HomePage } from './pressentations/pages/HomePage'
+import { MenuFoodsPage } from './pressentations/pages/MenuFoodsPage'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -20,11 +21,12 @@ class App extends React.Component<IProps, any> {
 
   render() {
     return (
-      <div className="App" >
-        {/* <h1> Hello : {this.viewModel.credit.first_name}</h1>
-        <h1> Hello : {this.viewModel.credit.last_name}</h1> */}
-        <HomePage />
-      </div>
+      <RXRouter.BrowserRouter>
+        <RXRouter.Switch>
+          <RXRouter.Route exact path="/" component={HomePage}/>
+          <RXRouter.Route exact path="/menu-foods" component={MenuFoodsPage}/>
+        </RXRouter.Switch>
+      </RXRouter.BrowserRouter>
     );
   }
 }
