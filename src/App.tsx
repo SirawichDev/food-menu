@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
 import { start } from './config/firebaseConfig';
-import { CreditStore } from './stores/CreditStore';
-
+// import { CreditStore } from './stores/CreditStore';
 import { HomePage } from './pressentations/pages/HomePage'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,14 +13,9 @@ export interface IProps {
 @observer
 class App extends React.Component<IProps, any> {
 
-
-  private viewModel: CreditStore;
-
   constructor(props: IProps) {
     super(props);
     start();
-    this.viewModel = new CreditStore();
-    console.log(this.viewModel);
   }
 
   render() {

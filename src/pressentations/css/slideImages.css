@@ -1,0 +1,80 @@
+.contrainer {
+   padding-top: 80px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.slideContainerImage {
+   position: relative;
+   width: 100%;
+   max-width: 720px;
+}
+
+.slideContainer {
+   padding-top: 75%;
+}
+
+.slideContainer .image{
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   display: flex;
+   flex: 1;
+   background-repeat: round;
+}
+
+.paginate-image {
+   display: flex;
+   flex-direction: row;
+   height: 50px;
+   align-items: center;
+}
+
+.paginate-contrainer {
+   display: flex;
+   flex-direction: row;
+}
+
+.paginate-item {
+   width: 20px;
+   height: 20px;
+   border-radius: 100%;
+   margin: 0px 10px 0px 10px;
+   border-style: solid;
+   border-width: 1px;
+   border-color: #FF69B4;
+}
+
+.paginate-item:hover {
+   cursor: pointer;
+   width: 25px;
+   height: 25px;
+}
+
+.button-arrow {
+   display: flex;
+   align-items: center;
+}
+
+.button-arrow:hover {
+   cursor: pointer;
+}
+
+.button-center {
+   display: flex;
+   flex: 1;
+}
+
+.enter-site-contrainer {
+   display: flex;
+   justify-content: center;
+   flex: 1;
+   padding-top: 20px;
+}
+
+.enter-site-contrainer:hover {
+   cursor: pointer;
+}
