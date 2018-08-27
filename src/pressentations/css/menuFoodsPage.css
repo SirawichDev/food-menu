@@ -27,21 +27,27 @@
 @media screen and (max-width: 991px) {
    .food-card {
         margin: 24px 55px 16px 55px;
-        border-style: solid;
-        background-color: blueviolet;
-        border-width: 5px;
    }
 }
 
 @media screen and (max-width: 767px) {
    .food-card {
-        width: 250px;
         margin: 24px 10px 16px 10px;
-        border-style: solid;
-        background-color: blueviolet;
-        border-width: 5px;
+        width: 250px;
+        height: 333px;
+
    }
 }
+
+
+@media screen and (max-width: 539px) {
+   .food-card {
+        width: 200px;
+        height: 266px;
+        margin: 14px auto 6px auto;
+   }
+}
+
 
 @media screen and (max-width: 420px) {
    .food-card {
