@@ -5,11 +5,35 @@
 }
 
 .food-card {
+   display: flex;
+   flex-direction: column;
    width: 250px;
    height: 333px;
    border-style: solid;
    background-color: white;
    border-width: 1px;
+}
+
+.image-card {
+    background-color: blueviolet;
+    height: 187px;
+}
+
+.card-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.card-content{
+    flex: 1;
+}
+
+.card-button {
+    background-color: brown;
+    display: flex;
+    justify-content: center;
 }
 
 @media screen and (max-width: 1920px) {
@@ -33,9 +57,6 @@
 @media screen and (max-width: 767px) {
    .food-card {
         margin: 24px 10px 16px 10px;
-        width: 250px;
-        height: 333px;
-
    }
 }
 
@@ -46,13 +67,21 @@
         height: 266px;
         margin: 14px auto 6px auto;
    }
+
+   .image-card {
+        height: 150px;
+    }
 }
 
 
 @media screen and (max-width: 420px) {
    .food-card {
-        height: 200px;
         width: 150px;
+        height: 200px;
         margin: 14px auto 6px auto;
    }
+
+   .image-card {
+    height: 112px;
+}
 }

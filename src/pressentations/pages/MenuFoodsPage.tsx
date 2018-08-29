@@ -21,9 +21,33 @@ export class MenuFoodsPage extends React.Component<IProps, any> {
       constructor(props: IProps) {
             super(props);
             // this.viewModel = new HomePageStore();
+            this.state = {
+                  selected: []
+            }
       }
 
       render() {
+
+            const foods = [];
+            console.log(this.state);
+
+            for (let i = 0; i < 22; i++) {
+                  // console.log(i);
+                  foods.push(
+                        <div key={i} className="food-card">
+                              <div className="image-card" />
+                              <div className="card-container">
+                                    <div className="card-content"> Food{i} </div>
+                                    <div
+                                          className="card-button"
+                                          onClick={() => this.onSelect("Food" + i)}
+                                    >
+                                          select
+                                    </div>
+                              </div>
+                        </div>
+                  )
+            }
 
             return (
                   <div>
@@ -31,20 +55,17 @@ export class MenuFoodsPage extends React.Component<IProps, any> {
                         <div className="menu-foods-container">
                               <RXStrap.Container>
                                     <RXStrap.Row>
-                                          <div className="food-card">
-                                          </div>
-                                          <div className="food-card">
-                                          </div>
-                                          <div className="food-card">
-                                          </div>
-                                          <div className="food-card">
-                                          </div>
-                                          <div className="food-card">
-                                          </div>
+                                          {foods}
                                     </RXStrap.Row>
                               </RXStrap.Container>
                         </div>
                   </div>
             )
+      }
+
+      private onSelect = (item: string) => {
+            this.setState({
+                  selected: [...this.state.selected, item]
+            });
       }
 }

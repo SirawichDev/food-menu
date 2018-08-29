@@ -1,7 +1,7 @@
 import * as firebase from 'firebase';
 import { observable, action } from 'mobx';
 import { ImageSO } from '../model/storemodel/ImageSO';
-import { FireBaseKey } from '../firebaseKey/FireBaseKey';
+import { FireBaseKey } from '../untils/FireBaseKey';
 // import { to } from 'await-to-js';
 
 export class HomePageStore {
