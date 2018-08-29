@@ -3,6 +3,7 @@ import { FoodNavbar } from '../components/Navbar';
 import { observer } from 'mobx-react';
 import { ImageSlideShow } from '../components/ImageSlideShow';
 import { HomePageStore } from '../../stores/HomePageStore';
+import { UserProfileStore } from '../../stores/UserProfileStore';
 // import { NavLink } from 'react-router-dom';
 
 // import * as RStrap from 'reactstrap';
@@ -17,17 +18,19 @@ interface IProps {
 export class HomePage extends React.Component<IProps, any> {
 
       private viewModel: HomePageStore;
+      private storeProfile: UserProfileStore;
 
       constructor(props: IProps) {
             super(props);
             this.viewModel = new HomePageStore();
+            this.storeProfile = new UserProfileStore();
       }
 
       render() {
 
             return (
                   <div>
-                        <FoodNavbar />
+                        <FoodNavbar store={this.storeProfile}/>
                         <ImageSlideShow imageSildeShow={this.viewModel.images} loading={this.viewModel.loading} />
                         <div className="enter-site-contrainer">
                               <a href='/menu-foods' style={{textDecoration: 'none', color: 'black'}}>

@@ -8,6 +8,7 @@ import * as RXStrap from 'reactstrap';
 
 //css
 import '../css/menuFoodsPage.css';
+import { UserProfileStore } from '../../stores/UserProfileStore';
 
 interface IProps {
       //
@@ -16,23 +17,18 @@ interface IProps {
 @observer
 export class MenuFoodsPage extends React.Component<IProps, any> {
 
-      // private viewModel: HomePageStore;
+      private storeProfile: UserProfileStore;
 
       constructor(props: IProps) {
             super(props);
+            this.storeProfile = new UserProfileStore();
             // this.viewModel = new HomePageStore();
-            this.state = {
-                  selected: []
-            }
       }
 
       render() {
 
             const foods = [];
-            console.log(this.state);
-
             for (let i = 0; i < 22; i++) {
-                  // console.log(i);
                   foods.push(
                         <div key={i} className="food-card">
                               <div className="image-card" />
@@ -51,7 +47,7 @@ export class MenuFoodsPage extends React.Component<IProps, any> {
 
             return (
                   <div>
-                        <FoodNavbar />
+                        <FoodNavbar store={this.storeProfile}/>
                         <div className="menu-foods-container">
                               <RXStrap.Container>
                                     <RXStrap.Row>
@@ -64,8 +60,5 @@ export class MenuFoodsPage extends React.Component<IProps, any> {
       }
 
       private onSelect = (item: string) => {
-            this.setState({
-                  selected: [...this.state.selected, item]
-            });
       }
 }

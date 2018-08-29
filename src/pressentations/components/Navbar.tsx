@@ -7,24 +7,21 @@ import { UserProfileStore } from '../../stores/UserProfileStore';
 import '../css/navbar.css';
 
 interface IProps {
-      //
+      store: UserProfileStore;
 }
 
 @observer
 export class FoodNavbar extends React.Component<IProps, any> {
 
-      private store: UserProfileStore;
 
       constructor(props: IProps) {
             super(props);
-            this.store = new UserProfileStore();
             this.state = {
                   isOpen: false,
             }
       }
 
       render() {
-            console.log(this.store.userProfile.displayName);
             return (
                   <div>
                         <div className="headNav" />
@@ -49,9 +46,9 @@ export class FoodNavbar extends React.Component<IProps, any> {
                                                       <ReactStrap.NavLink href="/Promotion/">Promotions</ReactStrap.NavLink>
                                                 </ReactStrap.NavItem>
                                                 {
-                                                      this.store.userProfile.displayName ?
+                                                      this.props.store.userProfile.displayName ?
                                                             <ReactStrap.UncontrolledDropdown nav inNavbar>
-                                                                  <ReactStrap.DropdownToggle nav caret> {this.store.userProfile.displayName} </ReactStrap.DropdownToggle>
+                                                                  <ReactStrap.DropdownToggle nav caret> {this.props.store.userProfile.displayName} </ReactStrap.DropdownToggle>
                                                                   <ReactStrap.DropdownMenu right>
                                                                         <ReactStrap.DropdownItem>รถเข็นของฉัน</ReactStrap.DropdownItem>
                                                                         <ReactStrap.DropdownItem>รายละเอียดโปรไฟล์</ReactStrap.DropdownItem>
@@ -86,9 +83,9 @@ export class FoodNavbar extends React.Component<IProps, any> {
       }
 
       private onLogout = () => {
-            this.store.onLogout();
+            this.props.store.onLogout();
       }
       private onLogin = () => {
-            this.store.onLoginWithGoogle();
+            this.props.store.onLoginWithGoogle();
       }
 }
