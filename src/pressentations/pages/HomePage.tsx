@@ -4,9 +4,6 @@ import { observer } from 'mobx-react';
 import { ImageSlideShow } from '../components/ImageSlideShow';
 import { HomePageStore } from '../../stores/HomePageStore';
 import { UserProfileStore } from '../../stores/UserProfileStore';
-// import { NavLink } from 'react-router-dom';
-
-// import * as RStrap from 'reactstrap';
 
 //css
 
