@@ -26,6 +26,7 @@ export class UserProfileStore {
             else {
                 this.userProfile = new UserProfileSO();
             }
+            console.log(this.userProfile);
         }
     }
 

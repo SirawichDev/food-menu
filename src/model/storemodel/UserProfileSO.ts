@@ -1,5 +1,6 @@
 import { observable } from 'mobx';
 import { UserProfileDTO } from '../dtos/UserProfileDTO';
+import { ProductSO } from '../storemodel/ProductSO';
 
 export class UserProfileSO {
     @observable displayName?: string;
@@ -7,6 +8,7 @@ export class UserProfileSO {
     @observable phoneNumber?: string;
     @observable photoURL?: string;
     @observable refreshToken?: string;
+    @observable carts?: ProductSO[];
 
 
     static fromDTO(dto: UserProfileDTO): UserProfileSO {
@@ -16,6 +18,11 @@ export class UserProfileSO {
         so.phoneNumber = dto.phoneNumber;
         so.photoURL = dto.photoURL;
         so.refreshToken = dto.refreshToken;
+
+        if(dto.carts) {
+            so.carts = dto.carts.map(productDTO => ProductSO.fromDTO(productDTO));
+        }
+
         return so;
     }
 }
