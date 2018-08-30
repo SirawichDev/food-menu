@@ -29,3 +29,19 @@
     font-size: 20pt;
     color: #FF69B4;
 }
+
+.cartsItem-ontap {
+    background-color: #FF69B4;
+    color: white;
+    padding: 5px;
+    margin-left: 5px;
+    border-radius: 50%;
+}
+
+.cartsItem-dropItem {
+    background-color: #FF69B4;
+    color: white;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 50%;
+}

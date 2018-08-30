@@ -5,6 +5,7 @@ import { UserProfileSO } from '../model/storemodel/UserProfileSO';
 import { CookiesKey } from '../untils/CookiesKey';
 // import { to } from 'await-to-js';
 import * as RXCookie from 'react-cookie';
+import { ProductDTO } from '../model/dtos/ProductDTO';
 
 
 export class UserProfileStore {
@@ -42,6 +43,10 @@ export class UserProfileStore {
         this.loginWithGoogle();
     }
 
+    onPutCarts(product: ProductDTO) {
+        this.onSelectProduct(product);
+    }
+
     @action private async loginWithGoogle() {
         const provider = new firebase.auth.GoogleAuthProvider();
         const auth = firebase.auth();
@@ -56,5 +61,17 @@ export class UserProfileStore {
     @action private async logout() {
         this.cookie.remove(CookiesKey.userProfile);
         this.userProfile = new UserProfileSO();
+    }
+
+    @action private async onSelectProduct(product: ProductDTO) {
+        if (!this.userProfile.carts) {
+            this.userProfile.carts = []
+            this.userProfile.carts.push(product);
+            await this.cookie.set(CookiesKey.userProfile, this.userProfile, { path: '/' });
+        }
+        else {
+            this.userProfile.carts.push(product);
+            await this.cookie.set(CookiesKey.userProfile, this.userProfile, { path: '/' });
+        }
     }
 }

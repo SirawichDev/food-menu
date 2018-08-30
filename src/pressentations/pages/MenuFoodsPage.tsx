@@ -9,6 +9,7 @@ import * as RXStrap from 'reactstrap';
 //css
 import '../css/menuFoodsPage.css';
 import { UserProfileStore } from '../../stores/UserProfileStore';
+import { ProductDTO } from '../../model/dtos/ProductDTO';
 
 interface IProps {
       //
@@ -60,5 +61,12 @@ export class MenuFoodsPage extends React.Component<IProps, any> {
       }
 
       private onSelect = (item: string) => {
+            let product: ProductDTO = new ProductDTO();
+            product.product_Id = item;
+            product.productName = item;      
+            product.productImg  =  'sk.jpg';
+            product.shoper_id = 'Him';
+
+            this.storeProfile.onPutCarts(product);
       }
 }

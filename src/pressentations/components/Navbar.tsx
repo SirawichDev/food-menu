@@ -48,23 +48,40 @@ export class FoodNavbar extends React.Component<IProps, any> {
                                                 {
                                                       this.props.store.userProfile.displayName ?
                                                             <ReactStrap.UncontrolledDropdown nav inNavbar>
-                                                                  <ReactStrap.DropdownToggle nav caret> {this.props.store.userProfile.displayName} </ReactStrap.DropdownToggle>
+                                                                  <ReactStrap.DropdownToggle nav caret>
+                                                                        {this.props.store.userProfile.displayName}
+                                                                        {this.props.store.userProfile.carts ?
+                                                                              <span className="cartsItem-ontap">
+                                                                                    {this.props.store.userProfile.carts.length}
+                                                                              </span>
+                                                                              : undefined
+                                                                        }
+                                                                  </ReactStrap.DropdownToggle>
+
                                                                   <ReactStrap.DropdownMenu right>
-                                                                        <ReactStrap.DropdownItem>รถเข็นของฉัน</ReactStrap.DropdownItem>
+                                                                        <ReactStrap.DropdownItem>
+                                                                              {this.props.store.userProfile.carts ?
+                                                                                    <span className="cartsItem-dropItem">
+                                                                                          {this.props.store.userProfile.carts.length}
+                                                                                    </span>
+                                                                                    : undefined
+                                                                              }
+                                                                              รถเข็นของฉัน
+                                                                        </ReactStrap.DropdownItem>
                                                                         <ReactStrap.DropdownItem>รายละเอียดโปรไฟล์</ReactStrap.DropdownItem>
                                                                         <ReactStrap.DropdownItem>ตั้งค่าโปรไฟล์</ReactStrap.DropdownItem>
                                                                         <ReactStrap.DropdownItem divider />
-                                                                        <ReactStrap.DropdownItem onClick={this.onLogout} >
-                                                                              Logout
-                                                                        </ReactStrap.DropdownItem>
+                                                                        <ReactStrap.DropdownItem onClick={this.onLogout} >Logout</ReactStrap.DropdownItem>
                                                                   </ReactStrap.DropdownMenu>
                                                             </ReactStrap.UncontrolledDropdown>
                                                             :
                                                             <ReactStrap.UncontrolledDropdown nav inNavbar>
-                                                                  <ReactStrap.DropdownToggle nav caret href="/Login/">Login</ReactStrap.DropdownToggle>
-                                                                  <ReactStrap.DropdownMenu right>
-                                                                        <ReactStrap.DropdownItem onClick={this.onLogin}> Login</ReactStrap.DropdownItem>
-                                                                  </ReactStrap.DropdownMenu>
+                                                                  <ReactStrap.DropdownToggle nav caret href="/Login/">
+                                                                        Login
+                                                                        <ReactStrap.DropdownMenu right>
+                                                                              <ReactStrap.DropdownItem onClick={this.onLogin}> Login</ReactStrap.DropdownItem>
+                                                                        </ReactStrap.DropdownMenu>
+                                                                  </ReactStrap.DropdownToggle>
                                                             </ReactStrap.UncontrolledDropdown>
                                                 }
                                           </ReactStrap.Nav>
