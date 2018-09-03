@@ -51,10 +51,10 @@ export class UserProfileStore {
         const provider = new firebase.auth.GoogleAuthProvider();
         const auth = firebase.auth();
 
-        auth.signInWithPopup(provider).then(async (result) => {
+        auth.signInWithPopup(provider).then((result) => {
             const user = result.user ? result.user : {};
-            this.userProfile = await UserProfileSO.fromDTO(user);
-            await this.cookie.set(CookiesKey.userProfile, this.userProfile, { path: '/' });
+            this.userProfile = UserProfileSO.fromDTO(user);
+            this.cookie.set(CookiesKey.userProfile, this.userProfile, { path: '/' });
         });
     }
 
